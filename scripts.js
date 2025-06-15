@@ -653,7 +653,7 @@ function handleMenuAction(action) {
       sortTasks('priority');
       break;
     case 'documentation':
-      window.open('./documentation/doccumentation_index.html', '_blank');
+      window.open('./doccumentation/doccumentation_index.html', '_blank');
       break;
     case 'about':
       alert('Task Manager v1.0\n\nA simple task management web application.');
