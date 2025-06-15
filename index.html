@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="menu-bar">
+    <div class="menu-item">
+      File
+      <div class="dropdown">
+        <div class="dropdown-item" data-action="new-task">New Task</div>
+        <div class="dropdown-item" data-action="new-folder">New Folder</div>
+        <div class="context-menu-divider"></div>
+        <div class="dropdown-item" data-action="save">Save</div>
+        <div class="dropdown-item" data-action="export">Export</div>
+        <div class="context-menu-divider"></div>
+        <div class="dropdown-item" data-action="settings">Settings</div>
+      </div>
+    </div>
+    <div class="menu-item">
+      Edit
+      <div class="dropdown">
+        <div class="dropdown-item" data-action="undo">Undo</div>
+        <div class="dropdown-item" data-action="redo">Redo</div>
+        <div class="context-menu-divider"></div>
+        <div class="dropdown-item" data-action="cut">Cut</div>
+        <div class="dropdown-item" data-action="copy">Copy</div>
+        <div class="dropdown-item" data-action="paste">Paste</div>
+        <div class="dropdown-item" data-action="delete">Delete</div>
+        <div class="context-menu-divider"></div>
+        <div class="dropdown-item" data-action="select-all">Select All</div>
+      </div>
+    </div>
+    <div class="menu-item">
+      View
+      <div class="dropdown">
+        <div class="dropdown-item" data-action="toggle-sidebar">Toggle Sidebar</div>
+        <div class="dropdown-item" data-action="toggle-markdown">Toggle Markdown Preview</div>
+        <div class="context-menu-divider"></div>
+        <div class="dropdown-item" data-action="zoom-in">Zoom In</div>
+        <div class="dropdown-item" data-action="zoom-out">Zoom Out</div>
+        <div class="dropdown-item" data-action="reset-zoom">Reset Zoom</div>
+      </div>
+    </div>
+    <div class="menu-item">
+      Tasks
+      <div class="dropdown">
+        <div class="dropdown-item" data-action="mark-complete">Mark Complete</div>
+        <div class="dropdown-item" data-action="mark-incomplete">Mark Incomplete</div>
+        <div class="context-menu-divider"></div>
+        <div class="dropdown-item" data-action="set-priority-high">Set Priority: High</div>
+        <div class="dropdown-item" data-action="set-priority-medium">Set Priority: Medium</div>
+        <div class="dropdown-item" data-action="set-priority-low">Set Priority: Low</div>
+        <div class="context-menu-divider"></div>
+        <div class="dropdown-item" data-action="sort-by-name">Sort by Name</div>
+        <div class="dropdown-item" data-action="sort-by-date">Sort by Date</div>
+        <div class="dropdown-item" data-action="sort-by-priority">Sort by Priority</div>
+      </div>
+    </div>
+    <div class="menu-item">
+      Help
+      <div class="dropdown">
+        <div class="dropdown-item" data-action="documentation">Documentation</div>
+        <div class="dropdown-item" data-action="about">About</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="split-container" id="mainContainer">
+    <div class="task-list-container">
+      <div class="task-input-container">
+        <input type="text" class="task-input" id="taskInput" placeholder="Add new task...">
+      </div>
+      <div class="task-list" id="taskList"></div>
+    </div>
+    <div class="task-details-container">
+      <div class="task-details-header" id="taskDetailsHeader">
+        <h1 id="taskTitle">No task selected</h1>
+        <button class="toggle-preview-btn" id="togglePreviewBtn" title="Toggle Markdown Preview">Preview</button>
+      </div>
+      <div class="split-editor-preview">
+        <div class="task-details-editor" id="taskEditor"></div>
+        <div class="markdown-preview" id="markdownPreview"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="status-bar">
+    <div id="statusMessage">Ready</div>
+    <div id="lineInfo">0 tasks</div>
+  </div>
+
+  <div class="context-menu" id="contextMenu"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.40.0/min/vs/loader.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.0/marked.min.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>
